@@ -9,11 +9,9 @@ import org.springframework.data.neo4j.core.schema.Node;
 @Node
 @Getter
 @Setter
-public class Employee {
+public class Company {
     @Id
     @Generated
     private Long id;
-    private String name;
-    private Integer age;
-    private String branch;
+    private String companyName;
 }
