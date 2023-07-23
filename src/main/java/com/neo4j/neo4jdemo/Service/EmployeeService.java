@@ -5,15 +5,18 @@ import com.neo4j.neo4jdemo.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @Service
 public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
+    public Logger logger;
 
-    public List<Employee> getAllEmployees() {
+    public Collection<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
@@ -30,5 +33,9 @@ public class EmployeeService {
             return "Could not save employee";
         }
 
+    }
+
+    public Collection<Employee> getAll(){
+        return employeeRepository.getAll();
     }
 }
